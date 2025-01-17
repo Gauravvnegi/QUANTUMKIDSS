@@ -6,12 +6,6 @@ export class Form {
   uuid: string;
 
   @Column({ type: 'varchar', length: 255, nullable: false })
-  firstName: string;
-
-  @Column({ type: 'varchar', length: 255, nullable: false })
-  lastName: string;
-
-  @Column({ type: 'varchar', length: 255, nullable: false })
   parentName: string;
 
   @Column({ type: 'varchar', length: 255, nullable: false })
@@ -23,6 +17,11 @@ export class Form {
   @Column({ type: 'varchar', length: 15, nullable: false, unique: true })
   mobileNumber: string;
 
+  @Column({ type: 'varchar', length: 255, nullable: false })
+  childName: string;
+
+  @Column({ type: 'boolean', nullable: false })
+  isChecked: boolean;
 
   @Column({ type: 'enum', enum: ['Daycare', 'Playgroup','Nursery', 'LKG', 'UKG'], nullable: false })
   program: string;

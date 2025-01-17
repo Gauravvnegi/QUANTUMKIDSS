@@ -7,8 +7,6 @@ import { AdminModule } from './admin/admin.module';
 import { TeamAddModule } from './AddTeam/team.add.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Admin } from './admin/schema/admin.schema';
-import { BlogModule } from './blog/blog.module';
-import { Blog } from './blog/schema/blog.schema';
 import { NewsEventModule } from './news_events/news_events.module';
 import { PictureGalleryModule } from './picture_gallery/picture_gallery.module';
 import { NewsEvent } from './news_events/schema/news_events.entity';
@@ -35,12 +33,11 @@ import { FeeReceiptGenerate } from './fee-receipt-generate/entities/fee-receipt-
       username: 'developersqk_2025',
       password: 'QuantumKids@2025!',
       database: 'quantumkids',
-      entities: [Form,FeeReceiptSchema,,FeeReceiptGenerate,FeeManagement,StudentForm,AddTeam,Admin,Blog,NewsEvent,Picture, __dirname + '/**/*.entity{.ts,.js}'],
+      entities: [Form,FeeReceiptSchema,,FeeReceiptGenerate,FeeManagement,StudentForm,AddTeam,Admin,NewsEvent,Picture, __dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
     FormModule,
     AdminModule,
-    BlogModule,
     NewsEventModule,
     PictureGalleryModule,
     TeamAddModule,

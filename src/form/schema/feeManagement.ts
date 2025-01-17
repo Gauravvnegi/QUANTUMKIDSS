@@ -6,10 +6,7 @@ class FeeManagement {
   uuid: string;
 
   @Column({ type: 'varchar', length: 255, nullable: false })
-  firstName: string;
-
-  @Column({ type: 'varchar', length: 255, nullable: false })
-  lastName: string;
+  childName: string;
 
   @Column({ type: 'varchar', length: 255, nullable: false })
   email: string;

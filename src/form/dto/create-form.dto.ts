@@ -8,14 +8,6 @@ import {
 } from 'class-validator';
 
 export class CreateFormDto {
-  @ApiProperty({ description: 'First name of the lead' })
-  @IsString()
-  @IsNotEmpty()
-  firstName: string;
-  @ApiProperty({ description: 'First name of the lead' })
-  @IsString()
-  @IsNotEmpty()
-  lastName: string;
 
   @ApiProperty({ description: 'Last name of the lead' })
   @IsString()
@@ -70,4 +62,13 @@ export class CreateFormDto {
     'admitted',
   ])
   type: string = 'raw';
+
+  @ApiProperty({ description: 'Child name of the lead' })
+  @IsString()
+  @IsNotEmpty()
+  childName: string;
+
+  @ApiProperty({ description: 'Agreement to receive messages on WhatsApp' })
+  @IsNotEmpty()
+  isChecked: boolean;
 }

@@ -50,11 +50,6 @@ export class FormService {
     });
   
     let applicantNumber = 1;
-    // if (lastApplicant) {
-
-    //   const numberPart = lastApplicant.applicantId.split('-')[0].split(' ')[1];
-    //   applicantNumber = parseInt(numberPart, 10) + 1;
-    // }
     if (lastApplicant) {
       const match = lastApplicant.applicantId.match(/^QK-(\d+)-\d{2}-[A-Z]{3}$/);
       if (match) {
@@ -135,9 +130,11 @@ export class FormService {
   }
 
   async getSubmissionsByStatus(status: string, offset: string, pageSize: string): Promise<SubmissionsResult> {
-    // const skip = (parseInt(offset) - 1) * parseInt(pageSize);
+    const skip = (parseInt(offset) - 1) * parseInt(pageSize);
     const [data, totalCount] = await this.formRepository.findAndCount({
       where: { status },
+      skip,
+      take: parseInt(pageSize),
     });
     return {
       data,
@@ -150,9 +147,7 @@ export class FormService {
   }
   async saveInqueryForm(enqueryFormDto: EnqueryFormDto): Promise<StudentForm> {
     try {
-      const applicantId = await this.generateApplicantId(enqueryFormDto.firstName);
-      // const customId = this.generateCustomId();
-
+      const applicantId = await this.generateApplicantId(enqueryFormDto.childName);
       const newForm = this.studentFormRepository.create({
         ...enqueryFormDto,
         uuid: uuidv4(),

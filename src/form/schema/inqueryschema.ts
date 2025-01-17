@@ -12,10 +12,7 @@ class StudentForm {
   uuid: string;
 
   @Column({ type: 'varchar', length: 255, nullable: false })
-  firstName: string;
-
-  @Column({ type: 'varchar', length: 255, nullable: false })
-  lastName: string;
+  childName: string;
 
   @Column({ type: 'varchar', length: 255, nullable: false })
   email: string;
@@ -43,6 +40,9 @@ class StudentForm {
 
   @Column({ type: 'varchar', length: 255, nullable: false })
   applicantId: string;
+
+  @Column({ type: 'boolean', nullable: false })
+  isChecked: boolean;
 }
 
 export default StudentForm;

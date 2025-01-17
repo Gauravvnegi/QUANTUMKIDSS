@@ -2,15 +2,11 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsBoolean, IsEmail, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class EnqueryFormDto {
-  @ApiProperty()
+  @ApiProperty({ description: 'Child name of the lead' })
   @IsString()
   @IsNotEmpty()
-  firstName: string;
+  childName: string;
 
-  @ApiProperty()
-  @IsString()
-  @IsNotEmpty()
-  lastName: string;
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
@@ -30,8 +26,6 @@ export class EnqueryFormDto {
   @IsString()
   @IsNotEmpty()
   mobileNumber: string;
-
-
 
   @ApiProperty()
   @IsString()

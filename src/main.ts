@@ -27,6 +27,6 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   await app.listen(3002);
-  Logger.log('Application is running on http://localhost:3002');
+  Logger.log('Application is running on https://api.quantumkids.in/');
 }
 bootstrap();
